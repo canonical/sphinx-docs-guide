@@ -33,7 +33,7 @@ You should see a message: *Successfully added deploy key to GitHub project.*
 
 Hit **Build version**. You shoudl see the build progressing, then a *Build completed* message.
 
-Hit **View Docs* - which should take you to the built documentation.
+Hit **View Docs** - which should take you to the built documentation.
 
 
 Check the settings on the Dashboard
@@ -41,5 +41,7 @@ Check the settings on the Dashboard
 
 Back on the Dashboard for the project, hit **Admin**. Most of the settings are reasonably self-explanatory.
 
-Go to *Edit versions*. Your *Latest* version will be *Private* by default - you can change that to *Public*
-if appropriate.
+* *Edit versions*. Your *Latest* version will be *Private* by default - you
+   can change that to *Public* if appropriate.
+* *Advanced settings*. If you don't need multiple languages or versions right
+   now, select the *Single version* option.
