@@ -9,3 +9,4 @@ Work in progress!
    :maxdepth: 1
 
    setup-rtd
+   starter-pack

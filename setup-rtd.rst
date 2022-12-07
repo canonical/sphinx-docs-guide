@@ -41,7 +41,12 @@ Check the settings on the Dashboard
 
 Back on the Dashboard for the project, hit **Admin**. Most of the settings are reasonably self-explanatory.
 
-* *Edit versions*. Your *Latest* version will be *Private* by default - you
-   can change that to *Public* if appropriate.
-* *Advanced settings*. If you don't need multiple languages or versions right
-   now, select the *Single version* option.
+* *Edit versions*: Your *Latest* version will be *Private* by default - you
+  can change that to *Public* if appropriate.
+
+* *Advanced settings*:
+
+  * If you don't need multiple languages or versions right now, select
+    the *Single version* option.
+  * For *Documentation type*, choose *SphinxHtmlDir* (this creates nicer URLs,
+    without the `.html` suffix).
