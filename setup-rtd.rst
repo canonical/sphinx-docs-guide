@@ -1,6 +1,8 @@
 How to set up your documentation on RTD.com
 ==============================================
 
+You will need to a working documentation repository for the following steps to work.
+
 
 Create the project on Read the Docs
 ----------------------------------------
@@ -20,3 +22,24 @@ On `the readthedocs.com Dashboard <https://readthedocs.com/dashboard/>`_, create
 
 	If this does happen, the solution is to add a ``master`` branch to the project until
 	you're able to build it once, then specify the correct branch.
+
+Select the appropriate *Team* - this determines who gets admin access.
+
+Leave the *Advanced project options* alone for now.
+
+Hit **Next**.
+
+You should see a message: *Successfully added deploy key to GitHub project.*
+
+Hit **Build version**. You shoudl see the build progressing, then a *Build completed* message.
+
+Hit **View Docs* - which should take you to the built documentation.
+
+
+Check the settings on the Dashboard
+------------------------------------
+
+Back on the Dashboard for the project, hit **Admin**. Most of the settings are reasonably self-explanatory.
+
+Go to *Edit versions*. Your *Latest* version will be *Private* by default - you can change that to *Public*
+if appropriate.

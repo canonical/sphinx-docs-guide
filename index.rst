@@ -6,6 +6,6 @@ Sphinx and readthedocs.com
 Work in progress!
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    setup-rtd
