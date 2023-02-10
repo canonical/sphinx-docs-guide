@@ -3,52 +3,72 @@ How to set up your documentation on Read the Docs
 
 You will need to a working documentation repository for the following steps to work.
 
+This guide assumes you're using :doc:`starter-pack`.
+If your documentation repository is set up differently, you might need to adapt the described configuration to your setup.
+
+Get access to Read the Docs
+---------------------------
+
+Go to `Read the Docs for Business <https://readthedocs.com/>`_ (``readthedocs.com``, **not** ``readthedocs.org``) and create an account.
+
+Then get in touch with the `documentation team <https://chat.canonical.com/canonical/channels/documentation>`_ to be added to the Canonical organisation.
+They will set up a team for your project.
+(Note that this is a temporary solution, and a more structured way of granting access to Read the Docs is in the works.)
+
 
 Create the project on Read the Docs
-----------------------------------------
+-----------------------------------
 
-On `the Read the Docs Dashboard <https://readthedocs.com/dashboard/>`_, create a new project.
+On `the Read the Docs dashboard <https://readthedocs.com/dashboard/>`_, create a new project.
 
-* for a public Git repository, use the **Import** button
-* for a private Git repository, or if you can't easily find the repository, use
-  the `manual import <https://readthedocs.com/dashboard/import/manual/>`_
+* For a public Git repository, use the :guilabel:`Import a Project` button.
+* For a private Git repository, or if you can't easily find the repository, use
+  `the manual import <https://readthedocs.com/dashboard/import/manual/>`_.
 
-..  admonition:: When importing your project, make sure that you check the *Default branch*
-	field.
+Most fields are self-explanatory and you can leave the default values.
+Check and update the following fields:
 
-	If your repository does not have a |wokeignore:rule=master| branch,
-        and you don't specify the correct default branch, it will default to |wokeignore:rule=master-code| and will not be able to check out the repository and find the correct one.
+* Check the :guilabel:`Default branch` field.
 
-        If this does happen, the solution is to add a |wokeignore:rule=master-code| branch to the project until you're able to build it once, then specify the correct branch.
+  .. note::
 
-Select the appropriate *Team* - this determines who gets admin access.
+     If your repository does not have a |wokeignore:rule=master| branch,
+     and you don't specify the correct default branch, it will default to |wokeignore:rule=master-code| and will not be able to check out the repository and find the correct one.
 
-Leave the *Advanced project options* alone for now.
+     If this happens, the solution is to add a |wokeignore:rule=master-code| branch to the project until you're able to build it once, then specify the correct branch.
 
-Hit **Next**.
+* Don't select the :guilabel:`Edit advanced project options` check box for now - you will need to edit those settings later anyway.
+* Select the appropriate :guilabel:`Team` - this determines who gets admin access.
 
-You should see a message: *Successfully added deploy key to GitHub project.*
+Click :guilabel:`Next`.
+On the resulting page, select the **Admin** tab and update the following settings:
 
-Hit **Build version**. You should see the build progressing, then a *Build completed* message.
+1. Select **Advanced Settings** in the navigation.
+#. Select the :guilabel:`Privacy Level` for the project dashboard.
+   In most cases, this should be private.
+#. Select :guilabel:`Build pull requests for this project`.
+#. Select the :guilabel:`Privacy level of Pull Requests`.
+   For projects that are developed in the open, change this to public.
+#. Change the :guilabel:`Documentation type` to ``Sphinx HtmlDir``.
+#. Specify the path to the :guilabel:`Requirements file`.
+   In the starter pack, this is :file:`.sphinx/requirements.txt`.
+#. Click :guilabel:`Save`.
 
-Hit **View Docs** - which should take you to the built documentation.
+If you want your documentation to be accessible without logging in to Read the Docs, also change the following configuration:
 
+1. Select **Edit Versions** in the navigation.
+#. Click :guilabel:`Edit` for the latest version.
+#. Set the :guilabel:`Privacy Level` to public.
+#. Click :guilabel:`Save`.
 
-Check the settings on the Dashboard
-------------------------------------
+Build and view the documentation
+--------------------------------
 
-Back on the Dashboard for the project, hit **Admin**. Most of the settings are reasonably self-explanatory.
+In the project overview, click :guilabel:`Build version` to start a build.
+You should see the build progressing, followed by a ``Build completed`` message.
+If the build fails (but local builds work fine), you probably need to adapt some of the advanced project settings.
 
-* *Edit versions*: Your *Latest* version will be *Private* by default - you
-  can change that to *Public* if appropriate.
-
-* *Advanced settings*:
-
-  * If you don't need multiple languages or versions right now, select
-    the *Single version* option.
-  * For *Documentation type*, choose ``SphinxHtmlDir`` (this creates nicer URLs,
-    without the ``.html`` suffix).
-
+Click the :guilabel:`View Docs` button to see the built documentation.
 
 .. |wokeignore:rule=master| replace:: master
 .. |wokeignore:rule=master-code| replace:: ``master``
