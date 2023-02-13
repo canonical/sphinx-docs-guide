@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Sphinx and RTD.com'
+project = 'Sphinx and Read the Docs'
 copyright = '2022, Canonical Group Ltd'
 author = 'Daniele Procida'
 release = '1.0'

@@ -1,4 +1,4 @@
-Documentation with Sphinx and readthedocs.com
-==============================================
+Documentation with Sphinx and Read the Docs
+===========================================
 
 A guide for Canonical users.
