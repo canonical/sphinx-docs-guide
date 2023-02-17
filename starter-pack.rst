@@ -1,9 +1,9 @@
 The documentation starter pack
 ===============================
 
-The `starter pack <https://github.com/canonical/starter-pack>`_ is a repository that contains some examples
-of usage, formatting, content etc.
+The `starter pack repository <https://github.com/canonical/starter-pack>`_ provides a setup for a documentation repository that uses a Diátaxis structure and a Canonical-like theme.
 
-Its output is published on `Read the Docs <https://canonical-starter-pack.readthedocs-hosted.com/>`_.
+See the `Canonical starter pack <https://canonical-starter-pack.readthedocs-hosted.com/>`_ on Read the Docs for the output.
 
-The starter pack can be used as a basis for your own documentation.
+You can use this starter pack as a basis for your own documentation.
+See the `repository ReadMe <https://github.com/canonical/starter-pack>`_ for setup instructions.
