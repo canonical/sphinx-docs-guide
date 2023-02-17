@@ -1,7 +1,7 @@
 .. _home:
 
-Sphinx and readthedocs.com
-======================================================
+Sphinx and Read the Docs
+========================
 
 Work in progress!
 
