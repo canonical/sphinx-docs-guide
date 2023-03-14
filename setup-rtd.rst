@@ -35,10 +35,9 @@ Check and update the following fields:
 
   .. note::
 
-     If your repository does not have a |wokeignore:rule=master| branch,
-     and you don't specify the correct default branch, it will default to |wokeignore:rule=master-code| and will not be able to check out the repository and find the correct one.
+     If your repository does not have a ``master`` branch, and you don't specify the correct default branch, it will default to ``master`` and will not be able to check out the repository and find the correct one. |x wokeignore:rule=master x|
 
-     If this happens, the solution is to add a |wokeignore:rule=master-code| branch to the project until you're able to build it once, then specify the correct branch.
+     If this happens, the solution is to add a ``master`` branch to the project until you're able to build it once, then specify the correct branch. |x wokeignore:rule=master x|
 
 * Don't select the :guilabel:`Edit advanced project options` check box for now - you will need to edit those settings later anyway.
 * Select the appropriate :guilabel:`Team` - this determines who gets admin access.
@@ -72,6 +71,3 @@ You should see the build progressing, followed by a ``Build completed`` message.
 If the build fails (but local builds work fine), you probably need to adapt some of the advanced project settings.
 
 Click the :guilabel:`View Docs` button to see the built documentation.
-
-.. |wokeignore:rule=master| replace:: master
-.. |wokeignore:rule=master-code| replace:: ``master``
