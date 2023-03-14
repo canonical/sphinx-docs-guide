@@ -14,3 +14,4 @@ This guide helps you set up your documentation with :abbr:`rST (reStructuredText
 
    Set up your documentation <setup-rtd>
    Starter pack <starter-pack>
+   style-guide

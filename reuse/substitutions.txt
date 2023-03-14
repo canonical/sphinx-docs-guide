@@ -1,0 +1,2 @@
+.. |demo| replace:: *Magic!*
+.. |x wokeignore:rule=master x| replace:: \ 
