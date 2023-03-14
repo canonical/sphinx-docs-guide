@@ -1,3 +1,5 @@
+import datetime
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -7,9 +9,24 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Sphinx and Read the Docs'
-copyright = '2022, Canonical Group Ltd'
-author = 'Daniele Procida'
+author = 'Canonical Group Ltd'
+copyright = "%s, %s" % (datetime.date.today().year, author)
 release = '1.0'
+
+# Open Graph configuration - defines what is displayed in the website preview
+ogp_site_url = "https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/"
+ogp_site_name = project
+ogp_image = "https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg"
+
+html_context = {
+    # Change to the discourse instance you want to be able to link to
+    "discourse_prefix": "https://discourse.ubuntu.com/t/",
+    # Change to the GitHub info for your project
+    "github_url": "https://github.com/canonical/sphinx-docs-guide",
+    "github_version": "main",
+    "github_folder": "/",
+    "github_filetype": "rst"
+}
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -17,15 +34,23 @@ release = '1.0'
 extensions = [
     'sphinx_design',
     'sphinx_tabs.tabs',
-    'sphinx_reredirects']
+    'sphinx_reredirects',
+    'youtube-links',
+    'related-links',
+    'custom-rst-roles',
+    'sphinx_copybutton',
+    'sphinxext.opengraph'
+    ]
 
-templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx']
 
-
+# Links to ignore when checking links
+linkcheck_ignore = []
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+templates_path = [".sphinx/_templates"]
 
 html_theme = 'furo'
 html_last_updated_fmt = ""
@@ -59,6 +84,7 @@ html_theme_options = {
         "color-highlighted-background": "#EbEbEb",
         "color-link-underline": "var(--color-background-primary)",
         "color-link-underline--hover": "var(--color-background-primary)",
+        "color-version-popup": "#772953"
     },
     "dark_css_variables": {
         "color-foreground-secondary": "var(--color-foreground-primary)",
@@ -82,9 +108,9 @@ html_theme_options = {
         "color-highlighted-background": "#666",
         "color-link-underline": "var(--color-background-primary)",
         "color-link-underline--hover": "var(--color-background-primary)",
+        "color-version-popup": "#F29879"
     },
 }
-
 
 html_static_path = ['.sphinx/_static']
 html_css_files = [
