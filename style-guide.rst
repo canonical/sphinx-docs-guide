@@ -142,36 +142,50 @@ How to link depends on if you are linking to an external URL or to another page 
 External links
 ~~~~~~~~~~~~~~
 
-For external links, use the following syntax:
+For external links, use one of the following methods:
 
-.. list-table::
-   :header-rows: 1
+Link inline:
+  .. list-table::
+     :header-rows: 1
 
-   * - Input
-     - Output
-   * - ```Canonical website <https://canonical.com/>`_``
-     - `Canonical website <https://canonical.com/>`_
+     * - Input
+       - Output
+     * - ```Canonical website <https://canonical.com/>`_``
+       - `Canonical website <https://canonical.com/>`_
 
-To keep the text more readable, you can define your links at the bottom of each page:
+  It is also possible to use only the link without any markup.
+  However, that will usually cause an error in the spelling checker.
 
-.. list-table::
-   :header-rows: 1
+Define links at the bottom of the page:
+  To keep the text more readable, you can define your links at the bottom of each page:
 
-   * - Input
-     - Output
-     - Description
-   * - .. code::
+  .. list-table::
+     :header-rows: 1
 
-          .. LINKS
-          .. _Canonical website: https://canonical.com/
-     -
-     - Define the link
-   * - ```Canonical website`_``
-     - `Canonical website`_
-     - Use the link
+     * - Input
+       - Output
+       - Description
+     * - .. code::
 
-It is also possible to use only the link without any markup.
-However, that will usually cause an error in the spelling checker.
+            .. LINKS
+            .. _Canonical website: https://canonical.com/
+       -
+       - Define the link
+     * - ```Canonical website`_``
+       - `Canonical website`_
+       - Use the link
+
+Define links in a common link file:
+  To keep the text more readable and make it easy to maintain links, add all external link to a common link file (``reuse/links.txt``).
+  This file is pulled into all rST files, so the links are directly available in all files by just using the link text.
+
+  .. list-table::
+     :header-rows: 1
+
+     * - Input
+       - Output
+     * - ```Canonical website`_``
+       - `Canonical website`_
 
 To display a URL as text and prevent it from being linked, add an escaped space character (``http:\ //``; the space will not be visible):
 
