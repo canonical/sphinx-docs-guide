@@ -39,10 +39,18 @@ extensions = [
     'related-links',
     'custom-rst-roles',
     'sphinx_copybutton',
+    'sphinx.ext.intersphinx',
     'sphinxext.opengraph'
     ]
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx', 'readme.rst']
+
+intersphinx_mapping = {
+    'starter-pack': ('https://canonical-starter-pack.readthedocs-hosted.com/', None)
+}
+rst_epilog = """
+.. include:: /reuse/substitutions.txt
+"""
 
 # Links to ignore when checking links
 linkcheck_ignore = []
