@@ -6,11 +6,11 @@
 reStructuredText style guide
 ============================
 
-The documentation files use `reStructuredText (rST) <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ syntax. |x wokeignore:rule=master x|
+The documentation files use `reStructuredText`_ (rST) syntax.
 
 See the following sections for syntax help and conventions.
 
-For general style conventions, see the `Canonical Documentation Style Guide <https://docs.ubuntu.com/styleguide/en>`_.
+For general style conventions, see the `Canonical Documentation Style Guide`_.
 
 Headings
 --------
@@ -257,7 +257,7 @@ Navigation
 
 Every documentation page must be included as a sub-page to another page in the navigation.
 
-This is achieved with the `toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree>`_ |x wokeignore:rule=master x| directive in the parent page::
+This is achieved with the `toctree`_ directive in the parent page::
 
   .. toctree::
      :hidden:
@@ -380,7 +380,7 @@ Tables
 ------
 
 rST supports different markup for tables. Grid tables are most similar to tables in Markdown, but list tables are usually much easier to use.
-See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives>`_ for all table syntax alternatives. |x wokeignore:rule=master x|
+See the `Sphinx documentation <tables_>`_ for all table syntax alternatives.
 
 Both markups result in the following output:
 
@@ -399,7 +399,7 @@ Both markups result in the following output:
 Grid tables
 ~~~~~~~~~~~
 
-See `Grid Tables <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#grid-tables>`_ for reference.
+See `grid tables`_ for reference.
 
 .. code::
 
@@ -416,7 +416,7 @@ See `Grid Tables <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.
 List tables
 ~~~~~~~~~~~
 
-See `List table <https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table>`_ for reference.
+See `list tables`_ for reference.
 
 .. code::
 
@@ -498,7 +498,7 @@ Adhere to the following conventions:
 
 - For local pictures, start the path with :file:`/` (for example, :file:`/images/image.png`).
 - Use ``PNG`` format for screenshots and ``SVG`` format for graphics.
-- See `Five golden rules for compliant alt text <https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text>`_ for information about how to word the alt text.
+- See `Five golden rules for compliant alt text`_ for information about how to word the alt text.
 
 Reuse
 -----

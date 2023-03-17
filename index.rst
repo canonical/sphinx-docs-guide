@@ -4,9 +4,9 @@
 Sphinx and Read the Docs
 ========================
 
-This guide helps you set up your documentation with :abbr:`rST (reStructuredText)` and `Sphinx <https://www.sphinx-doc.org/>`_ and publish it on `Read the Docs <https://readthedocs.com/dashboard/>`_.
+This guide helps you set up your documentation with :abbr:`rST (reStructuredText)` and `Sphinx`_ and publish it on `Read the Docs for Business`_.
 
-If you'd like a hand with getting started, get in touch with the `documentation team <https://chat.canonical.com/canonical/channels/documentation>`_.
+If you'd like a hand with getting started, get in touch with the `documentation team`_.
 We're available to help!
 
 .. important::

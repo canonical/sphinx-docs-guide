@@ -12,9 +12,9 @@ If your documentation repository is set up differently, you might need to adapt 
 Get access to Read the Docs
 ---------------------------
 
-Go to `Read the Docs for Business <https://readthedocs.com/>`_ (``readthedocs.com``, **not** ``readthedocs.org``) and create an account.
+Go to `Read the Docs for Business`_ (``readthedocs.com``, **not** ``readthedocs.org``) and create an account.
 
-Then get in touch with the `documentation team <https://chat.canonical.com/canonical/channels/documentation>`_ to be added to the Canonical organisation.
+Then get in touch with the `documentation team`_ to be added to the Canonical organisation.
 They will set up a team for your project.
 (Note that this is a temporary solution, and a more structured way of granting access to Read the Docs is in the works.)
 
@@ -22,11 +22,11 @@ They will set up a team for your project.
 Create the project on Read the Docs
 -----------------------------------
 
-On `the Read the Docs dashboard <https://readthedocs.com/dashboard/>`_, create a new project.
+On the `Read the Docs dashboard`_, create a new project.
 
 * For a public Git repository, use the :guilabel:`Import a Project` button.
 * For a private Git repository, or if you can't easily find the repository, use
-  `the manual import <https://readthedocs.com/dashboard/import/manual/>`_.
+  the `manual import`_.
 
 Most fields are self-explanatory and you can leave the default values.
 Check and update the following fields:
