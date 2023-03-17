@@ -42,7 +42,7 @@ extensions = [
     'sphinxext.opengraph'
     ]
 
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx', 'readme.rst']
 
 # Links to ignore when checking links
 linkcheck_ignore = []
