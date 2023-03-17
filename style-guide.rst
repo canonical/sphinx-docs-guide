@@ -2,7 +2,6 @@
 
 .. _style-guide:
 
-============================
 reStructuredText style guide
 ============================
 
@@ -22,7 +21,6 @@ Headings
      - Description
    * - .. code::
 
-          =====
           Title
           =====
      - Page title and H1 heading
@@ -46,10 +44,8 @@ Headings
           Heading
           .......
      - H5 heading
-   * - Underlines with other characters, for example, ``"``, ``#`` or ``*``
-     - Further headings
 
-Underlines and overlines must be at least as long as the title or heading.
+Underlines must be the same length as the title or heading.
 
 Adhere to the following conventions:
 

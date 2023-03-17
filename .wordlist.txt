@@ -9,4 +9,3 @@ reStructuredText
 UI
 Intersphinx
 toctree
-overlines

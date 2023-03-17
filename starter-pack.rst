@@ -1,6 +1,5 @@
 .. _starter-pack:
 
-==============================
 The documentation starter pack
 ==============================
 
