@@ -5,7 +5,7 @@
 reStructuredText style guide
 ============================
 
-The documentation files use `reStructuredText`_ (rST) syntax.
+The documentation files use `reStructuredText`_ (reST) syntax.
 
 See the following sections for syntax help and conventions.
 
@@ -173,7 +173,7 @@ Define links at the bottom of the page:
 
 Define links in a common link file:
   To keep the text more readable and make it easy to maintain links, add all external link to a common link file (``reuse/links.txt``).
-  This file is pulled into all rST files, so the links are directly available in all files by just using the link text.
+  This file is pulled into all reST files, so the links are directly available in all files by just using the link text.
 
   .. list-table::
      :header-rows: 1
@@ -389,7 +389,7 @@ Definition lists
 Tables
 ------
 
-rST supports different markup for tables. Grid tables are most similar to tables in Markdown, but list tables are usually much easier to use.
+reST supports different markup for tables. Grid tables are most similar to tables in Markdown, but list tables are usually much easier to use.
 See the `Sphinx documentation <tables_>`_ for all table syntax alternatives.
 
 Both markups result in the following output:
@@ -513,7 +513,7 @@ Adhere to the following conventions:
 Reuse
 -----
 
-A big advantage of rST in comparison to plain Markdown is that it allows to reuse content.
+A big advantage of reST in comparison to plain Markdown is that it allows to reuse content.
 
 Substitution
 ~~~~~~~~~~~~
@@ -523,7 +523,7 @@ To reuse sentences or paragraphs without too much markup and special formatting,
 Substitutions can be defined in the following locations:
 
 - In the :file:`reuse/substitutions.txt` file. Substitutions defined in this file are available in all documentation pages.
-- In any rST file in the following format::
+- In any reST file in the following format::
 
      .. |reuse_key| replace:: This is **included** text.
 

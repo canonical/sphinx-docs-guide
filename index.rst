@@ -3,7 +3,7 @@
 Sphinx and Read the Docs
 ========================
 
-This guide helps you set up your documentation with :abbr:`rST (reStructuredText)` and `Sphinx`_ and publish it on `Read the Docs for Business`_.
+This guide helps you set up your documentation with :abbr:`reST (reStructuredText)` and `Sphinx`_ and publish it on `Read the Docs for Business`_.
 
 If you'd like a hand with getting started, get in touch with the `documentation team`_.
 We're available to help!
