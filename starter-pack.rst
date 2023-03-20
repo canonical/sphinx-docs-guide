@@ -3,7 +3,7 @@
 The documentation starter pack
 ==============================
 
-The `starter pack repository`_ provides a setup for a documentation repository that uses a Diátaxis structure and a Canonical-like theme.
+The `Sphinx documentation starter pack repository`_ (`sphinx-docs-starter-pack`) provides a setup for a documentation repository that uses a Diátaxis structure and a Canonical-like theme.
 
 See the `Canonical starter pack`_ on Read the Docs for the output.
 
