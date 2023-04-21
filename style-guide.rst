@@ -71,6 +71,8 @@ Inline formatting
      - :file:`file path`
    * - ``:command:`command```
      - :command:`command`
+   * - ``:kbd:`Key```
+     - :kbd:`Key`
    * - ``*Italic*``
      - *Italic*
    * - ``**Bold**``
