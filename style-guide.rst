@@ -2,15 +2,14 @@
 
 .. _style-guide:
 
-============================
 reStructuredText style guide
 ============================
 
-The documentation files use `reStructuredText (rST) <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ syntax. |x wokeignore:rule=master x|
+The documentation files use `reStructuredText`_ (reST) syntax.
 
 See the following sections for syntax help and conventions.
 
-For general style conventions, see the `Canonical Documentation Style Guide <https://docs.ubuntu.com/styleguide/en>`_.
+For general style conventions, see the `Canonical Documentation Style Guide`_.
 
 Headings
 --------
@@ -22,7 +21,6 @@ Headings
      - Description
    * - .. code::
 
-          =====
           Title
           =====
      - Page title and H1 heading
@@ -46,10 +44,8 @@ Headings
           Heading
           .......
      - H5 heading
-   * - Underlines with other characters, for example, ``"``, ``#`` or ``*``
-     - Further headings
 
-Underlines and overlines must be at least as long as the title or heading.
+Underlines must be the same length as the title or heading.
 
 Adhere to the following conventions:
 
@@ -75,6 +71,8 @@ Inline formatting
      - :file:`file path`
    * - ``:command:`command```
      - :command:`command`
+   * - ``:kbd:`Key```
+     - :kbd:`Key`
    * - ``*Italic*``
      - *Italic*
    * - ``**Bold**``
@@ -142,36 +140,50 @@ How to link depends on if you are linking to an external URL or to another page 
 External links
 ~~~~~~~~~~~~~~
 
-For external links, use the following syntax:
+For external links, use one of the following methods:
 
-.. list-table::
-   :header-rows: 1
+Link inline:
+  .. list-table::
+     :header-rows: 1
 
-   * - Input
-     - Output
-   * - ```Canonical website <https://canonical.com/>`_``
-     - `Canonical website <https://canonical.com/>`_
+     * - Input
+       - Output
+     * - ```Canonical website <https://canonical.com/>`_``
+       - `Canonical website <https://canonical.com/>`_
 
-To keep the text more readable, you can define your links at the bottom of each page:
+  It is also possible to use only the link without any markup.
+  However, that will usually cause an error in the spelling checker.
 
-.. list-table::
-   :header-rows: 1
+Define links at the bottom of the page:
+  To keep the text more readable, you can define your links at the bottom of each page:
 
-   * - Input
-     - Output
-     - Description
-   * - .. code::
+  .. list-table::
+     :header-rows: 1
 
-          .. LINKS
-          .. _Canonical website: https://canonical.com/
-     -
-     - Define the link
-   * - ```Canonical website`_``
-     - `Canonical website`_
-     - Use the link
+     * - Input
+       - Output
+       - Description
+     * - .. code::
 
-It is also possible to use only the link without any markup.
-However, that will usually cause an error in the spelling checker.
+            .. LINKS
+            .. _Canonical website: https://canonical.com/
+       -
+       - Define the link
+     * - ```Canonical website`_``
+       - `Canonical website`_
+       - Use the link
+
+Define links in a common link file:
+  To keep the text more readable and make it easy to maintain links, add all external link to a common link file (``reuse/links.txt``).
+  This file is pulled into all reST files, so the links are directly available in all files by just using the link text.
+
+  .. list-table::
+     :header-rows: 1
+
+     * - Input
+       - Output
+     * - ```Canonical website`_``
+       - `Canonical website`_
 
 To display a URL as text and prevent it from being linked, add an escaped space character (``http:\ //``; the space will not be visible):
 
@@ -257,7 +269,7 @@ Navigation
 
 Every documentation page must be included as a sub-page to another page in the navigation.
 
-This is achieved with the `toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree>`_ |x wokeignore:rule=master x| directive in the parent page::
+This is achieved with the `toctree`_ directive in the parent page::
 
   .. toctree::
      :hidden:
@@ -379,8 +391,8 @@ Definition lists
 Tables
 ------
 
-rST supports different markup for tables. Grid tables are most similar to tables in Markdown, but list tables are usually much easier to use.
-See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives>`_ for all table syntax alternatives. |x wokeignore:rule=master x|
+reST supports different markup for tables. Grid tables are most similar to tables in Markdown, but list tables are usually much easier to use.
+See the `Sphinx documentation <tables_>`_ for all table syntax alternatives.
 
 Both markups result in the following output:
 
@@ -399,7 +411,7 @@ Both markups result in the following output:
 Grid tables
 ~~~~~~~~~~~
 
-See `Grid Tables <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#grid-tables>`_ for reference.
+See `grid tables`_ for reference.
 
 .. code::
 
@@ -416,7 +428,7 @@ See `Grid Tables <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.
 List tables
 ~~~~~~~~~~~
 
-See `List table <https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table>`_ for reference.
+See `list tables`_ for reference.
 
 .. code::
 
@@ -498,12 +510,12 @@ Adhere to the following conventions:
 
 - For local pictures, start the path with :file:`/` (for example, :file:`/images/image.png`).
 - Use ``PNG`` format for screenshots and ``SVG`` format for graphics.
-- See `Five golden rules for compliant alt text <https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text>`_ for information about how to word the alt text.
+- See `Five golden rules for compliant alt text`_ for information about how to word the alt text.
 
 Reuse
 -----
 
-A big advantage of rST in comparison to plain Markdown is that it allows to reuse content.
+A big advantage of reST in comparison to plain Markdown is that it allows to reuse content.
 
 Substitution
 ~~~~~~~~~~~~
@@ -513,7 +525,7 @@ To reuse sentences or paragraphs without too much markup and special formatting,
 Substitutions can be defined in the following locations:
 
 - In the :file:`reuse/substitutions.txt` file. Substitutions defined in this file are available in all documentation pages.
-- In any rST file in the following format::
+- In any reST file in the following format::
 
      .. |reuse_key| replace:: This is **included** text.
 

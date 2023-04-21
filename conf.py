@@ -50,6 +50,7 @@ intersphinx_mapping = {
 }
 rst_epilog = """
 .. include:: /reuse/substitutions.txt
+.. include:: /reuse/links.txt
 """
 
 # Links to ignore when checking links

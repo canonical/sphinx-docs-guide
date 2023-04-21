@@ -4,9 +4,8 @@ ReadMe
 roadmap
 webhook
 Diátaxis
-rST
+reST
 reStructuredText
 UI
 Intersphinx
 toctree
-overlines
