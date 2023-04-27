@@ -19,3 +19,6 @@
 .. _list tables: https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table
 
 .. _Five golden rules for compliant alt text: https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text
+
+.. |lxd-sphinx-extensions| replace:: ``lxd-sphinx-extensions``
+.. _lxd-sphinx-extensions: https://github.com/canonical/lxd-sphinx-extensions

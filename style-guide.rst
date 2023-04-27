@@ -663,11 +663,15 @@ Custom extensions
 -----------------
 
 The starter pack includes some custom extensions that you can use.
+To use either of them, make sure to install the |lxd-sphinx-extensions|_ package.
 
 Related links
 ~~~~~~~~~~~~~
 
-You can add links to related websites to the sidebar by adding the following field at the top of the page::
+You can add links to related websites or Discourse topics to the sidebar.
+To do so, enable the ``related-links`` extension.
+
+To add a link to a related website, add the following field at the top of the page::
 
   :relatedlinks: https://github.com/canonical/lxd-sphinx-extensions, [RTFM](https://www.google.com)
 
@@ -681,7 +685,8 @@ Then add the following field at the top of the page (where ``12345`` is the ID o
 YouTube links
 ~~~~~~~~~~~~~
 
-To add a link to a YouTube video, use the following directive:
+To add a link to a YouTube video, enable the ``youtube-links`` extension.
+Then use the following directive:
 
 .. list-table::
    :header-rows: 1
@@ -703,6 +708,7 @@ Spelling exceptions
 ~~~~~~~~~~~~~~~~~~~
 
 If you need to use a word that does not comply to the spelling conventions, but is correct in a certain context, you can exempt it from the spelling checker by surrounding it with ``:spellexception:``.
+This role is part of the ``custom-rst-roles`` extension.
 
 .. list-table::
    :header-rows: 1
@@ -711,3 +717,44 @@ If you need to use a word that does not comply to the spelling conventions, but 
      - Output
    * - ``:spellexception:\`PurposelyWrong\```
      - :spellexception:`PurposelyWrong`
+
+Terminal output
+~~~~~~~~~~~~~~~
+
+To show a terminal view with commands and output, enable the ``terminal-output`` extension.
+Showing a terminal view can be useful to show the output of a specific command or series of commands, where it is important to see the difference between input and output.
+In addition, including a terminal view can help break up a long text and make it easier to consume, which is especially useful when documenting command-line-only products.
+
+To include a terminal view, use the following directive:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Input
+     - Output
+   * - .. code::
+
+          .. terminal::
+             :input: command number one
+             :user: root
+             :host: vm
+
+             output line one
+             output line two
+             :input: another command
+             more output
+     - .. terminal::
+          :input: command number one
+          :user: root
+          :host: vm
+
+          output line one
+          output line two
+          :input: another command
+          more output
+
+Input is specified as the ``:input:`` option (or prefixed with ``:input:`` as part of the main content of the directive).
+Output is the main content of the directive.
+
+To override the prompt (``user@host:~$`` by default), specify the ``:user:`` and/or ``:host:`` options.
+To make the terminal scroll horizontally instead of wrapping long lines, add ``:scroll:``.

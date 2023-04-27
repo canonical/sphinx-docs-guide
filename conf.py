@@ -38,6 +38,7 @@ extensions = [
     'youtube-links',
     'related-links',
     'custom-rst-roles',
+    'terminal-output',
     'sphinx_copybutton',
     'sphinx.ext.intersphinx',
     'sphinxext.opengraph'
