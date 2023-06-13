@@ -47,7 +47,7 @@ extensions = [
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx', 'readme.rst']
 
 intersphinx_mapping = {
-    'starter-pack': ('https://canonical-starter-pack.readthedocs-hosted.com/', None)
+    'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
 rst_epilog = """
 .. include:: /reuse/substitutions.txt

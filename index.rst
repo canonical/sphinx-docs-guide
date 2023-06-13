@@ -3,17 +3,20 @@
 Sphinx and Read the Docs
 ========================
 
-This guide helps you set up your documentation with :abbr:`reST (reStructuredText)` and `Sphinx`_ and publish it on `Read the Docs for Business`_.
+The guide for setting up your documentation with Sphinx and Read the Docs has moved to the `Canonical Reference Library`_:
 
-If you'd like a hand with getting started, get in touch with the `documentation team`_.
-We're available to help!
+- `Read the Docs at Canonical`_
+- `How to publish documentation on Read the Docs`_
 
-.. important::
-   This guide is a work in progress!
+Also see the following information:
+
+- `Example product documentation`_ and `Example product documentation repository`_
+- `Sphinx documentation starter pack documentation`_ and `Sphinx documentation starter pack repository`_
+
+Style guides
+------------
 
 .. toctree::
    :maxdepth: 1
 
-   Set up your documentation <setup-rtd>
-   Starter pack <starter-pack>
    style-guide

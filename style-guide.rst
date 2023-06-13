@@ -249,10 +249,10 @@ If a documentation page does not have a target, you can still reference it by us
 
    * - Input
      - Output
-   * - ``:doc:`setup-rtd```
-     - :doc:`setup-rtd`
-   * - ``:doc:`Link text <setup-rtd>```
-     - :doc:`Link text <setup-rtd>`
+   * - ``:doc:`index```
+     - :doc:`index`
+   * - ``:doc:`Link text <index>```
+     - :doc:`Link text <index>`
    * - ``:doc:`starter-pack:how-to/index```
      - :doc:`starter-pack:how-to/index`
    * - ``:doc:`Link text <starter-pack:how-to/index>```
@@ -565,12 +565,12 @@ By combining file inclusion and substitutions defined directly in a file, you ca
      - Output
    * - .. code::
 
-          .. include:: setup-rtd.rst
-             :start-after: In most cases, this should be private.
-             :end-before: #. Specify the path to the
-     - .. include:: setup-rtd.rst
-          :start-after: In most cases, this should be private.
-          :end-before: #. Specify the path to the
+          .. include:: index.rst
+             :start-after: Also see the following information:
+             :end-before: and `Sphinx documentation starter pack repository`_
+     - .. include:: index.rst
+          :start-after: Also see the following information:
+          :end-before: and `Sphinx documentation starter pack repository`_
 
 Adhere to the following conventions:
 
