@@ -1,4 +1,5 @@
 import datetime
+import sys
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -18,15 +19,26 @@ ogp_site_url = "https://canonical-documentation-with-sphinx-and-readthedocscom.r
 ogp_site_name = project
 ogp_image = "https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg"
 
+# Update with the favicon for your product
+html_favicon = ".sphinx/_static/favicon.png"
+
 html_context = {
     # Change to the discourse instance you want to be able to link to
-    "discourse_prefix": "https://discourse.ubuntu.com/t/",
+    # (use an empty value if you don't want to link)
+    "discourse": "",
     # Change to the GitHub info for your project
     "github_url": "https://github.com/canonical/sphinx-docs-guide",
+    # Change to the branch for this version of the documentation
     "github_version": "main",
+    # Change to the folder that contains the documentation (usually "/" or "/docs/")
     "github_folder": "/",
-    "github_filetype": "rst"
+    # Change to an empty value if your GitHub repo doesn't have issues enabled
+    "github_issues": "enabled"
 }
+
+# Used for related links - no need to change
+if 'discourse' in html_context:
+    html_context['discourse_prefix'] = html_context['discourse'] + "/t/"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -41,18 +53,29 @@ extensions = [
     'terminal-output',
     'sphinx_copybutton',
     'sphinx.ext.intersphinx',
-    'sphinxext.opengraph'
+    'sphinxext.opengraph',
+    'myst_parser'
     ]
+
+myst_enable_extensions = [
+    "substitution",
+    "deflist"
+]
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx', 'readme.rst']
 
 intersphinx_mapping = {
-    'starter-pack': ('https://canonical-starter-pack.readthedocs-hosted.com/', None)
+    'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
 rst_epilog = """
 .. include:: /reuse/substitutions.txt
 .. include:: /reuse/links.txt
 """
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # Links to ignore when checking links
 linkcheck_ignore = []
@@ -60,7 +83,14 @@ linkcheck_ignore = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-templates_path = [".sphinx/_templates"]
+# Find the current builder
+builder = "dirhtml"
+if '-b' in sys.argv:
+    builder = sys.argv[sys.argv.index('-b')+1]
+
+# Setting templates_path for epub makes the build fail
+if builder == "dirhtml" or builder == "html":
+    templates_path = [".sphinx/_templates"]
 
 html_theme = 'furo'
 html_last_updated_fmt = ""
@@ -124,8 +154,15 @@ html_theme_options = {
 
 html_static_path = ['.sphinx/_static']
 html_css_files = [
-    'custom.css'
+    'custom.css',
+    'github_issue_links.css',
 ]
+
+html_js_files = []
+if "github_issues" in html_context and html_context["github_issues"]:
+    html_js_files.append('github_issue_links.js')
+
+
 
 # Set up redirects (https://documatt.gitlab.io/sphinx-reredirects/usage.html)
 # For example: "explanation/old-name.html": "../how-to/prettify.html",

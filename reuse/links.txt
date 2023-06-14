@@ -1,12 +1,11 @@
-.. _Read the Docs for Business: https://readthedocs.com/
-.. _Read the Docs dashboard: https://readthedocs.com/dashboard/
-.. _manual import: https://readthedocs.com/dashboard/import/manual/
+.. _Canonical Reference Library: https://library.canonical.com/
 
-.. _documentation team: https://chat.canonical.com/canonical/channels/documentation
-
+.. _Read the Docs at Canonical: https://library.canonical.com/40-documentation/read-the-docs
+.. _How to publish documentation on Read the Docs: https://library.canonical.com/40-documentation/publish-on-read-the-docs
+.. _Example product documentation: https://canonical-example-product-documentation.readthedocs-hosted.com/
+.. _Example product documentation repository: https://github.com/canonical/example-product-documentation
 .. _Sphinx documentation starter pack repository: https://github.com/canonical/starter-pack
-.. _Canonical starter pack: https://canonical-starter-pack.readthedocs-hosted.com/
-.. _starter pack repository ReadMe: https://github.com/canonical/starter-pack/blob/main/readme.rst
+.. _Sphinx documentation starter pack documentation: https://canonical-starter-pack.readthedocs-hosted.com/
 
 .. _reStructuredText: https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html
 
