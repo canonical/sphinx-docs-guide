@@ -135,27 +135,48 @@ When explicitly starting a code block, you can specify the code language to enfo
 Links
 -----
 
-How to link depends on if you are linking to an external URL or to another page in the documentation.
+Link markup depends on whether you need an external URL
+or a page in the same documentation set.
+
 
 External links
 ~~~~~~~~~~~~~~
 
-For external links, use one of the following methods:
+For external links, use one of the following methods.
 
 Link inline:
+  Define occasional links directly within the surrounding text.
+
   .. list-table::
      :header-rows: 1
 
      * - Input
        - Output
+
      * - ```Canonical website <https://canonical.com/>`_``
        - `Canonical website <https://canonical.com/>`_
 
-  It is also possible to use only the link without any markup.
-  However, that will usually cause an error in the spelling checker.
+  You can also use a URL as is (``https://example.com``),
+  but that might cause spellchecker errors.
 
-Define links at the bottom of the page:
-  To keep the text more readable, you can define your links at the bottom of each page:
+  .. tip::
+
+     To prevent a URL from appearing as a link,
+     add an escaped space character (``https:\ //``).
+     The space won't be rendered:
+
+     .. list-table::
+        :header-rows: 1
+
+        * - Input
+          - Output
+
+        * - ``https:\ //canonical.com/``
+          - :spellexception:`https://canonical.com/`
+
+
+Define the links at the bottom of the page:
+  To keep the text readable, group the link definitions below.
 
   .. list-table::
      :header-rows: 1
@@ -163,37 +184,41 @@ Define links at the bottom of the page:
      * - Input
        - Output
        - Description
+
+     * - ```Canonical website`_``
+       - `Canonical website`_
+       - Using the below defined link
+
      * - .. code::
 
             .. LINKS
             .. _Canonical website: https://canonical.com/
-       -
-       - Define the link
-     * - ```Canonical website`_``
-       - `Canonical website`_
-       - Use the link
+       - *n/a*
+       - Defining links at the bottom
 
-Define links in a common link file:
-  To keep the text more readable and make it easy to maintain links, add all external link to a common link file (``reuse/links.txt``).
-  This file is pulled into all reST files, so the links are directly available in all files by just using the link text.
+
+Define the links in a shared file:
+  To keep the text readable and links maintainable,
+  put all link definitions in a file named :file:`reuse/links.txt`
+  to include it in a custom ``rst_epilog`` directive
+  (see the `Sphinx documentation <rst_epilog_>`_).
+
+  .. code-block:: python
+     :caption: :spellexception:`custom_conf.py`
+
+     custom_rst_epilog = """
+         .. include:: reuse/links.txt
+         """
 
   .. list-table::
      :header-rows: 1
 
      * - Input
        - Output
+
      * - ```Canonical website`_``
        - `Canonical website`_
 
-To display a URL as text and prevent it from being linked, add an escaped space character (``http:\ //``; the space will not be visible):
-
-.. list-table::
-   :header-rows: 1
-
-   * - Input
-     - Output
-   * - ``https:\ //canonical.com/``
-     - :spellexception:`https://canonical.com/`
 
 Internal references
 ~~~~~~~~~~~~~~~~~~~
