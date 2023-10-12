@@ -135,27 +135,48 @@ When explicitly starting a code block, you can specify the code language to enfo
 Links
 -----
 
-How to link depends on if you are linking to an external URL or to another page in the documentation.
+Link markup depends on whether you need an external URL
+or a page in the same documentation set.
+
 
 External links
 ~~~~~~~~~~~~~~
 
-For external links, use one of the following methods:
+For external links, use one of the following methods.
 
 Link inline:
+  Define occasional links directly within the surrounding text.
+
   .. list-table::
      :header-rows: 1
 
      * - Input
        - Output
+
      * - ```Canonical website <https://canonical.com/>`_``
        - `Canonical website <https://canonical.com/>`_
 
-  It is also possible to use only the link without any markup.
-  However, that will usually cause an error in the spelling checker.
+  You can also use a URL as is (``https://example.com``),
+  but that might cause spellchecker errors.
 
-Define links at the bottom of the page:
-  To keep the text more readable, you can define your links at the bottom of each page:
+  .. tip::
+
+     To prevent a URL from appearing as a link,
+     add an escaped space character (``https:\ //``).
+     The space won't be rendered:
+
+     .. list-table::
+        :header-rows: 1
+
+        * - Input
+          - Output
+
+        * - ``https:\ //canonical.com/``
+          - :spellexception:`https://canonical.com/`
+
+
+Define the links at the bottom of the page:
+  To keep the text readable, group the link definitions below.
 
   .. list-table::
      :header-rows: 1
@@ -163,37 +184,41 @@ Define links at the bottom of the page:
      * - Input
        - Output
        - Description
+
+     * - ```Canonical website`_``
+       - `Canonical website`_
+       - Using the below defined link
+
      * - .. code::
 
             .. LINKS
             .. _Canonical website: https://canonical.com/
-       -
-       - Define the link
-     * - ```Canonical website`_``
-       - `Canonical website`_
-       - Use the link
+       - *n/a*
+       - Defining links at the bottom
 
-Define links in a common link file:
-  To keep the text more readable and make it easy to maintain links, add all external link to a common link file (``reuse/links.txt``).
-  This file is pulled into all reST files, so the links are directly available in all files by just using the link text.
+
+Define the links in a shared file:
+  To keep the text readable and links maintainable,
+  put all link definitions in a file named :file:`reuse/links.txt`
+  to include it in a custom ``rst_epilog`` directive
+  (see the `Sphinx documentation <rst_epilog_>`_).
+
+  .. code-block:: python
+     :caption: :spellexception:`custom_conf.py`
+
+     custom_rst_epilog = """
+         .. include:: reuse/links.txt
+         """
 
   .. list-table::
      :header-rows: 1
 
      * - Input
        - Output
+
      * - ```Canonical website`_``
        - `Canonical website`_
 
-To display a URL as text and prevent it from being linked, add an escaped space character (``http:\ //``; the space will not be visible):
-
-.. list-table::
-   :header-rows: 1
-
-   * - Input
-     - Output
-   * - ``https:\ //canonical.com/``
-     - :spellexception:`https://canonical.com/`
 
 Internal references
 ~~~~~~~~~~~~~~~~~~~
@@ -520,32 +545,80 @@ A big advantage of reST in comparison to plain Markdown is that it allows to reu
 Substitution
 ~~~~~~~~~~~~
 
-To reuse sentences or paragraphs without too much markup and special formatting, use substitutions.
+To reuse sentences and entire paragraphs
+that have little markup or special formatting,
+define `substitutions`_ for them in two possible ways.
 
-Substitutions can be defined in the following locations:
+**Globally**, in a file named :file:`reuse/substitutions.txt`
+that is included in a custom ``rst_epilog`` directive
+(see the `Sphinx documentation <rst_epilog_>`_):
 
-- In the :file:`reuse/substitutions.txt` file. Substitutions defined in this file are available in all documentation pages.
-- In any reST file in the following format::
+.. code-block:: python
+   :caption: :spellexception:`custom_conf.py`
 
-     .. |reuse_key| replace:: This is **included** text.
+   custom_rst_epilog = """
+       .. include:: reuse/substitutions.txt
+       """
 
-.. |reuse_key| replace:: This is **included** text.
 
-You cannot override a substitution by defining it twice.
+.. code-block:: rest
+   :caption: :spellexception:`reuse/substitutions.txt`
+
+   .. |version_number| replace:: 0.1.0
+
+   .. |rest_text| replace:: *Multi-line* text
+                            that uses basic **markup**.
+
+   .. |site_link| replace:: Website link
+   .. _site_link: https://example.com
+
+
+**Locally**, putting the same directives in any reST file:
+
+.. code-block:: rest
+   :caption: :spellexception:`index.rst`
+
+   .. |version_number| replace:: 0.1.0
+
+   .. |rest_text| replace:: *Multi-line* text
+                            that uses basic **markup**.
+
+   .. And so on
+
+
+.. note::
+
+   Mind that substitutions can't be redefined;
+   for instance, accidentally including a definition twice causes an error:
+
+   .. code-block:: none
+
+      ERROR: Duplicate substitution definition name: "rest_text".
+
+
+The definitions from the above examples are rendered as follows:
 
 .. list-table::
    :header-rows: 1
 
    * - Input
      - Output
-   * - ``|reuse_key|``
-     - |reuse_key|
-   * - ``|demo|``
-     - |demo|
 
-Adhere to the following convention:
+   * - ``|version_number|``
+     - |version_number|
 
-- Use key names that indicate the included text (for example, ``note_not_supported`` instead of ``reuse_note``).
+   * - ``|rest_text|``
+     - |rest_text|
+
+   * - ``|site_link|_``
+     - |site_link|_
+
+
+.. tip::
+
+   Use substitution names that hint at the included content
+   (for example, ``note_not_supported`` instead of ``note_substitution``).
+
 
 File inclusion
 ~~~~~~~~~~~~~~
@@ -758,3 +831,11 @@ Output is the main content of the directive.
 
 To override the prompt (``user@host:~$`` by default), specify the ``:user:`` and/or ``:host:`` options.
 To make the terminal scroll horizontally instead of wrapping long lines, add ``:scroll:``.
+
+.. LINKS
+
+.. wokeignore:rule=master
+.. _substitutions: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#substitutions
+
+.. wokeignore:rule=master
+.. _rst_epilog: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-rst_epilog
