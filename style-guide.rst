@@ -146,6 +146,7 @@ For external links, use one of the following methods.
 
 Link inline:
   Define occasional links directly within the surrounding text.
+  To make the link text show up in code-style (which excludes it from the spelling check), use the custom ``:literalref:`` role (requires the :literalref:`lxd-sphinx-extensions <https://github.com/canonical/lxd-sphinx-extensions>` package).
 
   .. list-table::
      :header-rows: 1
@@ -155,6 +156,11 @@ Link inline:
 
      * - ```Canonical website <https://canonical.com/>`_``
        - `Canonical website <https://canonical.com/>`_
+
+     * - ``:literalref:`ubuntu.com```
+       - :literalref:`ubuntu.com`
+     * - ``:literalref:`xyzcommand <https://example.com>```
+       - :literalref:`xyzcommand <https://example.com>`
 
   You can also use a URL as is (``https://example.com``),
   but that might cause spellchecker errors.
@@ -736,7 +742,7 @@ Custom extensions
 -----------------
 
 The starter pack includes some custom extensions that you can use.
-To use either of them, make sure to install the |lxd-sphinx-extensions|_ package.
+To use either of them, make sure to install the :literalref:`lxd-sphinx-extensions <https://github.com/canonical/lxd-sphinx-extensions>` package.
 
 Related links
 ~~~~~~~~~~~~~
