@@ -21,3 +21,5 @@
 
 .. |lxd-sphinx-extensions| replace:: ``lxd-sphinx-extensions``
 .. _lxd-sphinx-extensions: https://github.com/canonical/lxd-sphinx-extensions
+
+.. _pygments documentation: https://pygments.org/languages/
