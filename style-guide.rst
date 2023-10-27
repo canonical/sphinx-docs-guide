@@ -788,7 +788,7 @@ This role is part of the ``custom-rst-roles`` extension.
 
    * - Input
      - Output
-   * - ``:spellexception:\`PurposelyWrong\```
+   * - ``:spellexception:`PurposelyWrong```
      - :spellexception:`PurposelyWrong`
 
 Terminal output
