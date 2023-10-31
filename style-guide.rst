@@ -1,4 +1,4 @@
-:relatedlinks: https://github.com/canonical/lxd-sphinx-extensions, https://tinyurl.com/rstprimer, https://docs.ubuntu.com/styleguide/en
+:relatedlinks: https://github.com/canonical/lxd-sphinx-extensions, https://tinyurl.com/rstprimer, [Canonical&#32;Documentation&#32;Style&#32;Guide](https://docs.ubuntu.com/styleguide/en)
 
 .. _style-guide:
 
@@ -8,6 +8,10 @@ reStructuredText style guide
 The documentation files use `reStructuredText`_ (reST) syntax.
 
 See the following sections for syntax help and conventions.
+
+.. note::
+   This style guide assumes that you are using the `Sphinx documentation starter pack`_.
+   Some of the mentioned syntax requires Sphinx extensions (which are enabled in the starter pack).
 
 For general style conventions, see the `Canonical Documentation Style Guide`_.
 
@@ -132,6 +136,46 @@ When explicitly starting a code block, you can specify the code language to enfo
           code:
           - example: true
 
+Terminal output
+~~~~~~~~~~~~~~~
+
+Showing a terminal view can be useful to show the output of a specific command or series of commands, where it is important to see the difference between input and output.
+In addition, including a terminal view can help break up a long text and make it easier to consume, which is especially useful when documenting command-line-only products.
+
+To include a terminal view, use the following directive:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Input
+     - Output
+   * - .. code::
+
+          .. terminal::
+             :input: command number one
+             :user: root
+             :host: vm
+
+             output line one
+             output line two
+             :input: another command
+             more output
+     - .. terminal::
+          :input: command number one
+          :user: root
+          :host: vm
+
+          output line one
+          output line two
+          :input: another command
+          more output
+
+Input is specified as the ``:input:`` option (or prefixed with ``:input:`` as part of the main content of the directive).
+Output is the main content of the directive.
+
+To override the prompt (``user@host:~$`` by default), specify the ``:user:`` and/or ``:host:`` options.
+To make the terminal scroll horizontally instead of wrapping long lines, add ``:scroll:``.
+
 Links
 -----
 
@@ -146,7 +190,7 @@ For external links, use one of the following methods.
 
 Link inline:
   Define occasional links directly within the surrounding text.
-  To make the link text show up in code-style (which excludes it from the spelling check), use the custom ``:literalref:`` role (requires the :literalref:`lxd-sphinx-extensions <https://github.com/canonical/lxd-sphinx-extensions>` package).
+  To make the link text show up in code-style (which excludes it from the spelling check), use the ``:literalref:`` role.
 
   .. list-table::
      :header-rows: 1
@@ -225,6 +269,42 @@ Define the links in a shared file:
      * - ```Canonical website`_``
        - `Canonical website`_
 
+Related links
+^^^^^^^^^^^^^
+
+You can add links to related websites or Discourse topics to the sidebar.
+
+To add a link to a related website, add the following field at the top of the page::
+
+  :relatedlinks: https://github.com/canonical/lxd-sphinx-extensions, [RTFM](https://www.google.com)
+
+To override the title, use Markdown syntax. Note that spaces are ignored; if you need spaces in the title, replace them with ``&#32;``, and include the value in quotes if Sphinx complains about the metadata value because it starts with ``[``.
+
+To add a link to a Discourse topic, configure the Discourse instance in the :file:`custom_conf.py` file.
+Then add the following field at the top of the page (where ``12345`` is the ID of the Discourse topic)::
+
+  :discourse: 12345
+
+YouTube links
+^^^^^^^^^^^^^
+
+To add a link to a YouTube video, use the following directive:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Input
+     - Output
+   * - .. code::
+
+          .. youtube:: https://www.youtube.com/watch?v=iMLiK1fX4I0
+             :title: Demo
+
+     - .. youtube:: https://www.youtube.com/watch?v=iMLiK1fX4I0
+          :title: Demo
+
+The video title is extracted automatically and displayed when hovering over the link.
+To override the title, add the ``:title:`` option.
 
 Internal references
 ~~~~~~~~~~~~~~~~~~~
@@ -315,7 +395,7 @@ Use orphan pages sparingly and only if there is a clear reason for it.
    Instead of hiding pages that you do not want to include in the documentation from the navigation, you can exclude them from being built.
    This method will also prevent them from being found through the search.
 
-   To exclude pages from the build, add them to the ``exclude_patterns`` variable in the :file:`conf.py` file.
+   To exclude pages from the build, add them to the ``custom_excludes`` variable in the :file:`custom_conf.py` file.
 
 Lists
 -----
@@ -717,10 +797,12 @@ More useful markup
 
    * - Input
      - Output
+     - Description
    * - .. code::
 
           .. versionadded:: X.Y
      - .. versionadded:: X.Y
+     - Can be used to distinguish between different versions.
    * - .. code::
 
           | Line 1
@@ -729,114 +811,21 @@ More useful markup
      - | Line 1
        | Line 2
        | Line 3
+     - Line breaks that are not paragraphs. Use this sparingly.
    * - .. code::
 
           ----
      - A horizontal line
+     - Can be used to visually divide sections on a page.
    * - ``.. This is a comment``
      - .. This is a comment
+     - Not visible in the output.
    * - ``:abbr:`API (Application Programming Interface)```
      - :abbr:`API (Application Programming Interface)`
-
-Custom extensions
------------------
-
-The starter pack includes some custom extensions that you can use.
-To use either of them, make sure to install the :literalref:`lxd-sphinx-extensions <https://github.com/canonical/lxd-sphinx-extensions>` package.
-
-Related links
-~~~~~~~~~~~~~
-
-You can add links to related websites or Discourse topics to the sidebar.
-To do so, enable the ``related-links`` extension.
-
-To add a link to a related website, add the following field at the top of the page::
-
-  :relatedlinks: https://github.com/canonical/lxd-sphinx-extensions, [RTFM](https://www.google.com)
-
-To override the title, use Markdown syntax. Note that spaces are ignored; if you need spaces in the title, replace them with ``&#32;``, and include the value in quotes if Sphinx complains about the metadata value because it starts with ``[``.
-
-To add a link to a Discourse topic, configure the Discourse instance in the :file:`conf.py` file.
-Then add the following field at the top of the page (where ``12345`` is the ID of the Discourse topic)::
-
-  :discourse: 12345
-
-YouTube links
-~~~~~~~~~~~~~
-
-To add a link to a YouTube video, enable the ``youtube-links`` extension.
-Then use the following directive:
-
-.. list-table::
-   :header-rows: 1
-
-   * - Input
-     - Output
-   * - .. code::
-
-          .. youtube:: https://www.youtube.com/watch?v=iMLiK1fX4I0
-             :title: Demo
-
-     - .. youtube:: https://www.youtube.com/watch?v=iMLiK1fX4I0
-          :title: Demo
-
-The video title is extracted automatically and displayed when hovering over the link.
-To override the title, add the ``:title:`` option.
-
-Spelling exceptions
-~~~~~~~~~~~~~~~~~~~
-
-If you need to use a word that does not comply to the spelling conventions, but is correct in a certain context, you can exempt it from the spelling checker by surrounding it with ``:spellexception:``.
-This role is part of the ``custom-rst-roles`` extension.
-
-.. list-table::
-   :header-rows: 1
-
-   * - Input
-     - Output
+     - Hover to display the full term.
    * - ``:spellexception:`PurposelyWrong```
      - :spellexception:`PurposelyWrong`
-
-Terminal output
-~~~~~~~~~~~~~~~
-
-To show a terminal view with commands and output, enable the ``terminal-output`` extension.
-Showing a terminal view can be useful to show the output of a specific command or series of commands, where it is important to see the difference between input and output.
-In addition, including a terminal view can help break up a long text and make it easier to consume, which is especially useful when documenting command-line-only products.
-
-To include a terminal view, use the following directive:
-
-.. list-table::
-   :header-rows: 1
-
-   * - Input
-     - Output
-   * - .. code::
-
-          .. terminal::
-             :input: command number one
-             :user: root
-             :host: vm
-
-             output line one
-             output line two
-             :input: another command
-             more output
-     - .. terminal::
-          :input: command number one
-          :user: root
-          :host: vm
-
-          output line one
-          output line two
-          :input: another command
-          more output
-
-Input is specified as the ``:input:`` option (or prefixed with ``:input:`` as part of the main content of the directive).
-Output is the main content of the directive.
-
-To override the prompt (``user@host:~$`` by default), specify the ``:user:`` and/or ``:host:`` options.
-To make the terminal scroll horizontally instead of wrapping long lines, add ``:scroll:``.
+     - Explicitly exempt a term from the spelling check.
 
 .. LINKS
 

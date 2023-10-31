@@ -4,6 +4,7 @@
 .. _How to publish documentation on Read the Docs: https://library.canonical.com/documentation/publish-on-read-the-docs
 .. _Example product documentation: https://canonical-example-product-documentation.readthedocs-hosted.com/
 .. _Example product documentation repository: https://github.com/canonical/example-product-documentation
+.. _Sphinx documentation starter pack:
 .. _Sphinx documentation starter pack repository: https://github.com/canonical/starter-pack
 .. _Sphinx documentation starter pack documentation: https://canonical-starter-pack.readthedocs-hosted.com/
 
