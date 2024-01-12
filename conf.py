@@ -1,5 +1,7 @@
 import datetime
 import sys
+import os
+import yaml
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -61,6 +63,10 @@ myst_enable_extensions = [
     "substitution",
     "deflist"
 ]
+
+if os.path.exists('./reuse/substitutions.yaml'):
+    with open('./reuse/substitutions.yaml', 'r') as fd:
+        myst_substitutions = yaml.safe_load(fd.read())
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.sphinx', 'readme.rst']
 

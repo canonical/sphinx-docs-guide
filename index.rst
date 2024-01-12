@@ -20,3 +20,4 @@ Style guides
    :maxdepth: 1
 
    style-guide
+   style-guide-myst
