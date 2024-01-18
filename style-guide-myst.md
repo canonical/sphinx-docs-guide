@@ -696,6 +696,8 @@ Adhere to the following convention:
 
 ## Tabs
 
+The recommended way of creating tabs is to use the [Sphinx tabs](https://sphinx-tabs.readthedocs.io/en/latest/) extension, which remembers the selected tab (also when navigating to other pages).
+
 ``````{list-table}
    :header-rows: 1
 
@@ -727,6 +729,49 @@ Adhere to the following convention:
     ```
 
     ```{group-tab} Tab 2
+
+    Content Tab 2
+    ```
+    ````
+``````
+
+Alternatively, if you use tabs only occasionally and don't want to include an additional extension for them, you can use the basic tabs that the [Sphinx design](https://sphinx-design.readthedocs.io/en/latest/) extension provides.
+
+``````{list-table}
+   :header-rows: 1
+
+* - Input
+  - Output
+* - `````
+
+    ````{tab-set}
+
+    ```{tab-item} Tab 1
+    :sync: key1
+
+    Content Tab 1
+    ```
+
+    ```{tab-item} Tab 2
+    :sync: key2
+
+    Content Tab 2
+    ```
+
+    ````
+
+    `````
+
+  - ````{tab-set}
+
+    ```{tab-item} Tab 1
+    :sync: key1
+
+    Content Tab 1
+    ```
+
+    ```{tab-item} Tab 2
+    :sync: key2
 
     Content Tab 2
     ```

@@ -17,5 +17,7 @@
 .. _tables: https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives
 .. _grid tables: https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#grid-tables
 .. _list tables: https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table
+.. _Sphinx tabs: https://sphinx-tabs.readthedocs.io/en/latest/
+.. _Sphinx design: https://sphinx-design.readthedocs.io/en/latest/
 
 .. _Five golden rules for compliant alt text: https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text
