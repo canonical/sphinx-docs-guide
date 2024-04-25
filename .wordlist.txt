@@ -32,6 +32,7 @@ OEM
 OLM
 Permalink
 pre
+Pygments
 ReadMe
 reST
 reStructuredText

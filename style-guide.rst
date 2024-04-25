@@ -95,6 +95,7 @@ In both cases, the code block must be surrounded by empty lines.
 
 When explicitly starting a code block, you can specify the code language to enforce a specific lexer, but in many cases, the default lexer works just fine.
 
+For a list of supported languages and their respective lexers, see the official `Pygments documentation`_.
 
 .. list-table::
    :header-rows: 1
