@@ -21,3 +21,5 @@
 .. _Sphinx design: https://sphinx-design.readthedocs.io/en/latest/
 
 .. _Five golden rules for compliant alt text: https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text
+
+.. _Pygments documentation: https://pygments.org/languages/
