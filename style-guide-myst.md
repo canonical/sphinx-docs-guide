@@ -24,7 +24,7 @@ For general style conventions, see the [Canonical Documentation Style Guide](htt
 ## Headings
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Description
@@ -49,7 +49,7 @@ Adhere to the following conventions:
 ## Inline formatting
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -84,7 +84,7 @@ Start and end a code block with three back ticks:
 You can specify the code language after the back ticks to enforce a specific lexer, but in many cases, the default lexer works just fine.
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -125,7 +125,7 @@ You can specify the code language after the back ticks to enforce a specific lex
 To include back ticks in a code block, increase the number of surrounding back ticks:
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -155,7 +155,7 @@ In addition, including a terminal view can help break up a long text and make it
 To show a terminal view, use the following directive:
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -203,7 +203,7 @@ For external links, use Markdown syntax.
 You can also use just the URL, but this will usually cause issues with the spelling check, so you should specify the link text as code in this case.
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -218,7 +218,7 @@ You can also use just the URL, but this will usually cause issues with the spell
 To display a URL as text and prevent it from being linked, add a `<span></span>`:
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -247,7 +247,7 @@ Then add the following field at the top of the page (where `12345` is the ID of 
 To add a link to a YouTube video, use the following directive:
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -281,7 +281,7 @@ You can add targets at any place in the documentation. However, if there is no h
 
 (a_random_target_myst)=
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -321,7 +321,7 @@ If a documentation page does not have a target, you can still reference it by us
 Use MyST syntax to automatically extract the link text. When overriding the link text, use Markdown syntax.
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -387,7 +387,7 @@ To exclude pages from the build, add them to the `custom_excludes` variable in t
 ## Lists
 
 ````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -434,7 +434,7 @@ Adhere to the following conventions:
 ### Definition lists
 
 ````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -460,7 +460,7 @@ See the [Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/restru
 Both markups result in the following output:
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Header 1
   - Header 2
@@ -487,7 +487,7 @@ See [list tables](https://docutils.sourceforge.io/docs/ref/rst/directives.html#l
 
 ````
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Header 1
   - Header 2
@@ -503,7 +503,7 @@ See [list tables](https://docutils.sourceforge.io/docs/ref/rst/directives.html#l
 ## Notes
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -552,7 +552,7 @@ Adhere to the following conventions:
 ## Images
 
 ````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -562,17 +562,17 @@ Adhere to the following conventions:
   - ![Alt text](https://assets.ubuntu.com/v1/b3b72cb2-canonical-logo-166.png)
 * - ````
     ```{figure} https://assets.ubuntu.com/v1/b3b72cb2-canonical-logo-166.png
-       :width: 100px
-       :alt: Alt text
+    :width: 100px
+    :alt: Alt text
 
-       Figure caption
+    Figure caption
     ```
     ````
   - ```{figure} https://assets.ubuntu.com/v1/b3b72cb2-canonical-logo-166.png
-       :width: 100px
-       :alt: Alt text
+    :width: 100px
+    :alt: Alt text
 
-       Figure caption
+    Figure caption
     ```
 ````
 
@@ -595,7 +595,7 @@ Substitutions can be defined in the following locations:
 - Globally, in a file named {file}`reuse/substitutions.yaml` that is loaded into the [`myst_substitutions`](https://myst-parser.readthedocs.io/en/v0.13.5/using/syntax-optional.html#substitutions-with-jinja2) variable in {file}`custom_conf.py`:
 
   ```{code-block} python
-     :caption: "{spellexception}`custom_conf.py`"
+  :caption: "{spellexception}`custom_conf.py`"
 
   import os
   import yaml
@@ -636,7 +636,7 @@ You can combine both options by defining a default substitution in `reuse/substi
 The definitions from the above examples are rendered as follows:
 
 ```{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -665,7 +665,7 @@ You cannot put any targets into the content that is being reused (because refere
 By combining file inclusion and substitutions, you can even replace parts of the included text.
 
 `````{list-table}
-     :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -674,8 +674,8 @@ By combining file inclusion and substitutions, you can even replace parts of the
     % Include parts of the content from
     % file [style-guide.rst](style-guide.rst)
     ```{include} style-guide.rst
-        :start-after: "Adhere to the following conventions:"
-        :end-before: "- Do not skip levels"
+    :start-after: "Adhere to the following conventions:"
+    :end-before: "- Do not skip levels"
     ```
 
     ````
@@ -683,8 +683,8 @@ By combining file inclusion and substitutions, you can even replace parts of the
   -
     % Include parts of the content from file [style-guide.rst](style-guide.rst)
     ```{include} style-guide.rst
-        :start-after: "Adhere to the following conventions:"
-        :end-before: "- Do not skip levels"
+    :start-after: "Adhere to the following conventions:"
+    :end-before: "- Do not skip levels"
     ```
 
 `````
@@ -700,7 +700,7 @@ Adhere to the following convention:
 The recommended way of creating tabs is to use the [Sphinx tabs](https://sphinx-tabs.readthedocs.io/en/latest/) extension, which remembers the selected tab (also when navigating to other pages).
 
 ``````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -739,7 +739,7 @@ The recommended way of creating tabs is to use the [Sphinx tabs](https://sphinx-
 Alternatively, if you use tabs only occasionally and don't want to include an additional extension for them, you can use the basic tabs that the [Sphinx design](https://sphinx-design.readthedocs.io/en/latest/) extension provides.
 
 ``````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -784,7 +784,7 @@ Alternatively, if you use tabs only occasionally and don't want to include an ad
 There is no support for details sections in MyST, but you can insert HTML to create them.
 
 ````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -809,7 +809,7 @@ There is no support for details sections in MyST, but you can insert HTML to cre
 You can define glossary terms in any file. Ideally, all terms should be collected in one glossary file though, and they can then be referenced from any file.
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
@@ -836,7 +836,7 @@ You can define glossary terms in any file. Ideally, all terms should be collecte
 ## More useful markup
 
 `````{list-table}
-   :header-rows: 1
+:header-rows: 1
 
 * - Input
   - Output
