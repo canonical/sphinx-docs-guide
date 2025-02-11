@@ -13,11 +13,12 @@ Also see the following information:
 - `Example product documentation`_ and `Example product documentation repository`_
 - `Sphinx documentation starter pack documentation`_ and `Sphinx documentation starter pack repository`_
 
-Style guides
-------------
+Contents
+--------
 
 .. toctree::
    :maxdepth: 1
 
+   tutorial/index
    style-guide
    style-guide-myst
