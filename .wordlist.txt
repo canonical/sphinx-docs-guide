@@ -41,6 +41,7 @@ QEMU
 ReadMe
 reST
 reStructuredText
+rst
 Rockcraft
 RTD
 subdirectories
@@ -51,4 +52,5 @@ UI
 UUID
 VM
 VMs
+wokeignore
 YAML
