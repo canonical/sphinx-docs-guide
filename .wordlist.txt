@@ -1,7 +1,10 @@
 addons
 API
 APIs
+backend
+backends
 balancer
+Charmcraft
 Charmhub
 CLI
 dropdown
@@ -23,6 +26,7 @@ Launchpad
 LTS
 Makefile
 Mattermost
+Multipass
 MyST
 namespace
 namespaces
@@ -33,9 +37,12 @@ OLM
 Permalink
 pre
 Pygments
+QEMU
 ReadMe
 reST
 reStructuredText
+rst
+Rockcraft
 RTD
 subdirectories
 subtree
@@ -44,4 +51,6 @@ Ubuntu
 UI
 UUID
 VM
+VMs
+wokeignore
 YAML
