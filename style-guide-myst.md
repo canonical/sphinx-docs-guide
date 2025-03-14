@@ -423,6 +423,22 @@ To exclude pages from the build, add them to the `custom_excludes` variable in t
     1. Step 2
        1. Sub-step 1
        1. Sub-step 2
+* - ```
+    This is a sentence.
+
+    1. Step 1
+    1. Step 2
+    1. Step 3
+
+    Another sentence follows.
+    ```
+  - This is a sentence.
+
+    1. Step 1
+    1. Step 2
+    1. Step 3
+
+    Another sentence follows.
 ````
 
 Adhere to the following conventions:
@@ -430,6 +446,8 @@ Adhere to the following conventions:
 - In numbered lists, use `1.` for all items to generate the step numbers automatically.
   You can also use a higher number for the first item to start with that number.
 - Use `-` for unordered lists. When using nested lists, you can use `*` for the nested level.
+- Leave a blank line before starting a list and after ending it.
+- Only use an indentation if you are creating a heirarchical list.
 
 ### Definition lists
 
