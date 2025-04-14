@@ -95,7 +95,7 @@ html_context = {
 
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
-    'github_issues': 'enabled',
+    'github_issues': '',
 
     # Controls the existence of Previous / Next buttons at the bottom of pages
     # Valid options: none, prev, next, both
@@ -176,7 +176,7 @@ custom_rst_epilog = """
 
 # By default, the documentation includes a feedback button at the top.
 # You can disable it by setting the following configuration to True.
-disable_feedback_button = False
+disable_feedback_button = True
 
 # Add tags that you want to use for conditional inclusion of text
 # (https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#tags)
