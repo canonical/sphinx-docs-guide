@@ -2,7 +2,7 @@
 Documentation with Sphinx and Read the Docs
 ===========================================
 
-ATTENTION: This project is being archived, as its content has moved to the `starter pack <https://github.com/canonical/sphinx-docs-starter-pack/tree/main>`_.
+ATTENTION: This project is archived. Its content has moved to the `starter pack <https://github.com/canonical/sphinx-docs-starter-pack/tree/main>`_.
 
 Overview
 ========
