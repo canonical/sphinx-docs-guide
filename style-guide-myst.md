@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # This site is archived
 
 ```{warning}
