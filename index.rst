@@ -6,7 +6,7 @@ This site is archived
 .. warning::
    This website is archived and is no longer maintained. The content has moved to the sites listed below.
 
-   Please update your bookmarks accordingly.
+   Please update your bookmarks and links accordingly.
 
 The internal guide to setting up your documentation with Sphinx and Read the Docs has moved to the `Canonical Reference Library`_. See:
 

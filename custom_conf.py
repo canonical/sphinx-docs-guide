@@ -155,7 +155,9 @@ if os.path.exists('./reuse/substitutions.yaml'):
 
 # Add files or directories that should be excluded from processing.
 custom_excludes = [
-    'readme.rst'
+    'readme.rst',
+    'style-guide-myst.md',
+    'style-guide.rst'
 ]
 
 # Add CSS files (located in .sphinx/_static/)
